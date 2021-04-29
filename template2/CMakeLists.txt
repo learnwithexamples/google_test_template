@@ -14,9 +14,9 @@ foreach (TMP_PATH ${Sources})
     endif ()
 endforeach (TMP_PATH)
 
-#remove *_main.c*
+#remove *main.c*
 foreach (TMP_PATH ${Sources})
-    string (FIND ${TMP_PATH} _main.c EXCLUDE_MAIN_FOUND)
+    string (FIND ${TMP_PATH} main.c EXCLUDE_MAIN_FOUND)
     if (NOT ${EXCLUDE_MAIN_FOUND} EQUAL -1)
         list (REMOVE_ITEM Sources ${TMP_PATH})
     endif()
@@ -36,9 +36,9 @@ add_executable(${TARGET} ${Sources})
 target_include_directories(${TARGET} PRIVATE ${INCLUDE_DIRS})
 target_link_libraries(${TARGET} PRIVATE gtest_main gtest gmock pthread)
 
-#remove *_test.c*
+#remove *test.c*
 foreach (TMP_PATH ${Sources})
-    string (FIND ${TMP_PATH} _test.c EXCLUDE_MAIN_FOUND)
+    string (FIND ${TMP_PATH} test.c EXCLUDE_MAIN_FOUND)
     if (NOT ${EXCLUDE_MAIN_FOUND} EQUAL -1)
         list (REMOVE_ITEM Sources ${TMP_PATH})
     endif()
