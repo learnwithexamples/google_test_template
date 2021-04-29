@@ -1,4 +1,4 @@
-#include "test1.h"
+#include "template_test.h"
 
 TEST(TESTSUITE1, testcase1) {
   EXPECT_EQ(1, 2) << "test if 1 equals 2";
