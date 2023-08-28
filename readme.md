@@ -19,3 +19,10 @@ For all templates, to build the code:
 - ```make```
 
 **Note: use ```cmake -D CMAKE_BUILD_TYPE=Debug ..``` to generate debug build.**
+
+** To run this in MacOS:
+1. install gtest: ```brew install googletest```
+2. add Lib path via terminal: ```export LIBRARY_PATH=/opt/brew/lib```
+3. add the following to CMakeLists.txt
+   ```set (CMAKE_CXX_STANDARD 14)```
+   ```include_directories("/opt/brew/include")```
